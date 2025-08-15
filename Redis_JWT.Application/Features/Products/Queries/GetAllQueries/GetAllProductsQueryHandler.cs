@@ -19,7 +19,7 @@ namespace Redis_JWT.Application.Features.Products.Queries.GetAll
         public GetAllProductsQueryHandler(IRedisJwtContext context, ICacheService cache)
         {
             _context = context;
-            _cache = cache;
+            _cache = cache; 
         }
 
         public async Task<Result<List<ProductDto>>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
