@@ -19,7 +19,7 @@ Bu proje; **ölçeklenebilir servis mimarisi**, **JWT kimlik doğrulama**, **Red
 ---
 
 ## Mimari (Onion)  
-**DOSYALAMA**
+DOSYALAMA
 
 
 Core
