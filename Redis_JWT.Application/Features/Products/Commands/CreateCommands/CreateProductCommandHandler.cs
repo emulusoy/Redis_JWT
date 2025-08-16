@@ -1,6 +1,7 @@
 ﻿
 using MediatR;
 using Redis_JWT.Application.Abstractions;
+using Redis_JWT.Application.Common.Cache;
 using Redis_JWT.Application.Common.Results;
 using Redis_JWT.Domain.Entities;
 
@@ -26,10 +27,20 @@ namespace Redis_JWT.Application.Features.Products.Commands.CreateCommands
                 Price = request.Price,
                 Stock = request.Stock
             };
+
             _context.Products.Add(entity);
             await _context.SaveChangesAsync(cancellationToken);
+            await _cache.RemoveAsync(CacheKeys.ProductsAll, cancellationToken);
+            var dto = new ProductDto
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Description = entity.Description,
+                Price = entity.Price,
+                Stock = entity.Stock
+            };
+            await _cache.SetAsync(CacheKeys.ProductItem(entity.Id), dto, TimeSpan.FromMinutes(5), cancellationToken);
 
-            await _cache.RemoveAsync("products:all", cancellationToken);
             return Result<int>.Success(entity.Id);
         }
     }

@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Redis_JWT.Application.Features.Products.Commands.CreateCommands;
 using Redis_JWT.Application.Features.Products.Commands.DeleteCommands;
 using Redis_JWT.Application.Features.Products.Commands.UpdateCommands;
-using Redis_JWT.Application.Features.Products.Queries.GetAll;
+using Redis_JWT.Application.Features.Products.Queries.GetAllQueries;
 using Redis_JWT.Application.Features.Products.Queries.GetByIdQuery;
 
 namespace Redis_JWT.WebApi.Controllers

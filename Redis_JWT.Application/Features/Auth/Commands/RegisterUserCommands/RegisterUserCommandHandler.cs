@@ -9,7 +9,7 @@ using Redis_JWT.Application.Abstractions;
 using Redis_JWT.Application.Common.Results;
 using Redis_JWT.Domain.Entities;
 
-namespace Redis_JWT.Application.Features.Auth.Commands.RegisterUser
+namespace Redis_JWT.Application.Features.Auth.Commands.RegisterUserCommands
 {
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand, Result>
     {

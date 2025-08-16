@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Redis_JWT.Application.Common.Results;
 
-namespace Redis_JWT.Application.Features.Auth.Commands.RegisterUser
+namespace Redis_JWT.Application.Features.Auth.Commands.RegisterUserCommands
 {
     public sealed record RegisterUserCommand(string Username, string Email, string Password) : IRequest<Result>;
 }

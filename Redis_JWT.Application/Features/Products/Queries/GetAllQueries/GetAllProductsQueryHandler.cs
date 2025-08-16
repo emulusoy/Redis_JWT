@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Redis_JWT.Application.Abstractions;
 using Redis_JWT.Application.Common.Results;
 
-namespace Redis_JWT.Application.Features.Products.Queries.GetAll
+namespace Redis_JWT.Application.Features.Products.Queries.GetAllQueries
 {
     public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, Result<List<ProductDto>>>
     {

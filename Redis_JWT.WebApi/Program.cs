@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Redis_JWT.Application.Abstractions;
-using Redis_JWT.Application.Features.Auth.Commands.RegisterUser;
+using Redis_JWT.Application.Features.Auth.Commands.RegisterUserCommands;
 using Redis_JWT.Persistence.Auth;
 using Redis_JWT.Persistence.Caching;
 using Redis_JWT.Persistence.Context;

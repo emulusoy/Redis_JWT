@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Redis_JWT.Application.Features.Auth.Commands.RegisterUser;
+using Redis_JWT.Application.Features.Auth.Commands.RegisterUserCommands;
 using Redis_JWT.Application.Features.Auth.Queries.LoginQueries;
 
 namespace Redis_JWT.WebApi.Controllers

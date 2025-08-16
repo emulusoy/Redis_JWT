@@ -2,7 +2,6 @@
 using Microsoft.EntityFrameworkCore;
 using Redis_JWT.Application.Abstractions;
 using Redis_JWT.Application.Common.Results;
-using Redis_JWT.Application.Features.Auth.Queries.Login;
 
 namespace Redis_JWT.Application.Features.Auth.Queries.LoginQueries
 {
