@@ -1,3 +1,5 @@
+
+
 # Redis_JWT (Onion + CQRS + JWT + Redis + EF Core/PostgreSQL)
 
 Bu proje; **ölçeklenebilir servis mimarisi**, **JWT kimlik doğrulama**, **Redis cache**, **EF Core + PostgreSQL**, **Onion Architecture (Core–Application–Infrastructure–API)** ve **CQRS (MediatR)** kullanımını örnekler.
@@ -88,6 +90,10 @@ Sık Sorunlar
 500/deserialize: Redis’te eski cache → DEL app:products:all veya FLUSHDB.
 
 DB boş: Doğru connection string + migration update kontrolü.
+
+LOGLAMA KISMI FOTOLAR Status 200 Statuss 401 icin 
+<img width="2511" height="1195" alt="Screenshot 2025-08-16 181211" src="https://github.com/user-attachments/assets/7205da83-21ed-4e3a-b89c-6e4600ee97c3" />
+<img width="2540" height="1182" alt="Screenshot 2025-08-16 181017" src="https://github.com/user-attachments/assets/c1b63dc2-efa4-4615-b24d-684bf50329eb" />
 
 
 
