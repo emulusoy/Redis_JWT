@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Redis_JWT.Application.Features.Auth.Commands.RegisterUser;
-using Redis_JWT.Application.Features.Auth.Queries.Login;
+using Redis_JWT.Application.Features.Auth.Queries.LoginQueries;
 
 namespace Redis_JWT.WebApi.Controllers
 {
@@ -28,14 +28,13 @@ namespace Redis_JWT.WebApi.Controllers
                 : BadRequest(new { error = "Registration Failed - Kayit Basarisiz" }); 
         }
         [HttpGet("AuthOrNo")]
-        [AllowAnonymous] // Global Authorize header varsa kimlik doğrulaması yapılır
+        [AllowAnonymous] // Login olup olmadigimizi kontrol ediyoruz! sawaggere ek Authorize ekledik!
         public IActionResult AuthOrNo()
         {
             var isAuth = User?.Identity?.IsAuthenticated == true;
             var claims = isAuth
                 ? User!.Claims.Select(c => new { c.Type, c.Value })
                 : Enumerable.Empty<object>();
-
             return Ok(new { isAuthenticated = isAuth, claims });
         }
     }

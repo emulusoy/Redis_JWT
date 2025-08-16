@@ -8,8 +8,7 @@ namespace Redis_JWT.Application.Common.Results
     public readonly record struct Error(string Code, string Description);
     public class Result
     {
-        //burayi kurma sebebim handler bize bir result doner bu resulttan daha once var mi diye bakariz ayrica error gibi hazir olan seyleri dondeririz burada error verdiriyotum
-
+        //burayi kurma sebebim handler bize bir result doner bu resulttan daha once var mi diye bakariz ayrica error gibi hazir olan seyleri dondeririz 
         public bool IsSuccess { get; }
         public bool IsFailure => !IsSuccess;
         public Error? Error { get; }
