@@ -2,18 +2,25 @@
 
 Bu proje; **ölçeklenebilir servis mimarisi**, **JWT kimlik doğrulama**, **Redis cache**, **EF Core + PostgreSQL**, **Onion Architecture (Core–Application–Infrastructure–API)** ve **CQRS (MediatR)** kullanımını örnekler.
 
+---
+
 ## Teknolojiler
-- .NET 8, C#
-- EF Core + PostgreSQL
-- Redis (StackExchange.Redis / IDistributedCache)
-- MediatR (CQRS: Command/Query + Handler)
-- JWT Authentication
-- Serilog (Console sink)
-- Swagger (Bearer Auth)
 
-## Mimari (Onion)
+| Teknoloji |
+|---|
+| .NET 8, C# |
+| EF Core + PostgreSQL |
+| Redis (StackExchange.Redis / IDistributedCache) |
+| MediatR (CQRS: Command/Query + Handler) |
+| JWT Authentication |
+| Serilog |
+| Swagger |
 
-DOSYALAMA 
+---
+
+## Mimari (Onion)  
+DOSYALAMA
+
 
 Core
 ├─ Domain (Entities)
@@ -28,34 +35,43 @@ Presentation
 └─ WebApi (Controllers, Program.cs)
 
 ## Kurulum
-- .NET 8 SDK
-- PostgreSQL
-- Redis - Docker Ile Kullandim!
 
-### Postgres bağlantısı (appsettings.json) burayi gizli tutmadim incelemeniz icin!
+- .NET 8 SDK  
+- PostgreSQL  
+- **Redis - Docker ile kullandım!**
 
-Redis (Docker)
+**Postgres bağlantısı (appsettings.json)** – *burayı gizli tutmadım, incelemeniz için!*  
+
+**Redis (Docker):**
+```bash```
 docker run -d --name redis -p 6379:6379 redis
+
 # Sağlık kontrolü:
-docker exec -it redis redis-cli ping    # PONG
+docker exec -it redis redis-cli ping 
 
-##Migration + DB oluşturma
+---##Migration + DB oluşturma
 
-Migrationlar Infrastructure/Redis_JWT.Persistence projesinde, startup WebApi.\
+---##Migrationlar Infrastructure/Redis_JWT.Persistence projesinde, startup WebApi.
 
 Add-Migration InitialCreate
 Update-Database
 
-Calistirmaya gec!
+---##Calistirmaya gec!
+Projeyi çalıştırın (Swagger açılır)
+
+Swagger sağ üst Authorize → Login’den aldığınız token (eyJ… ) değerini girin
+
+Ürün listeleme → Redis cache üzerinden gelir (TTL/Key yapılandırması koddadır)
 
 
-Logging & Global Exception
 
-Serilog → Console
+##Logging & Global Exception
+
+Serilog 
 
 app.UseSerilogRequestLogging() → tüm istek/yanıtlar loglanır.
 
-Global exception handler → Türkçe ProblemDetails (dev/prod davranışı ayarlı).
+Global exception handler → Türkçe ProblemDetails 
 
 Notlar
 
