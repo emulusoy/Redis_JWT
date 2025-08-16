@@ -43,7 +43,7 @@ Presentation
 **Postgres bağlantısı (appsettings.json)** – *burayı gizli tutmadım, incelemeniz için!*  
 
 **Redis (Docker):**
-```bash
+```bash```
 docker run -d --name redis -p 6379:6379 redis
 
 # Sağlık kontrolü:
